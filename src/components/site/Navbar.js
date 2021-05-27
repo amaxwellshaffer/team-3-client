@@ -8,7 +8,12 @@ import Login from '../functions/auth/Login';
 import Register from '../functions/auth/Register';
 
 
-const Navigation = () => {
+// const protectedViews = () => {
+//     return (sessionToken === localStorage.getItem('token') ? <WorkoutIndex token={sessionToken} />
+//     : <Auth updateToken={updateToken} /> )
+//   }
+
+const Navigation = (props) => {
     return (
         <div className="site-container">
 
@@ -40,8 +45,8 @@ const Navigation = () => {
                     <Route exact path="/"><Home /></Route>
                     <Route exact path="/search"><Search /></Route>
                     <Route exact path="/profile"><Profile /></Route>
-                    <Route exact path="/login"><Login /></Route>
-                    <Route exact path="/register"><Register /></Route>
+                    <Route exact path="/login"><Login updateToken={props.updateToken}/></Route>
+                    <Route exact path="/register"><Register updateToken={props.updateToken}/></Route>
                 </Switch>
 
             </div>
