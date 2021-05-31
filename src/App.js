@@ -5,8 +5,10 @@ import Footer from './components/site/Footer';
 import Navigation from './components/site/Navbar';
 import { BrowserRouter as Router} from 'react-router-dom';
 
-function App() {
 
+function App() {
+  
+  
   const [sessionToken, setSessionToken] = useState('');
 
   useEffect(() => {
@@ -30,9 +32,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navigation updateToken={updateToken} />
+        <Navigation updateToken={updateToken} token={sessionToken}/>
+      <Footer clickLogout={clearToken} />
       </Router>
-      <Footer />
     </div>
   );
 }

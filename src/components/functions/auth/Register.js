@@ -1,14 +1,23 @@
 import React, {useState} from 'react';
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { useHistory } from "react-router-dom";
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    const history = useHistory();
+
     const handleSubmit = (event) => {
+
         event.preventDefault(event);
-        fetch('http://localhost:8085/user/register', {
+
+        function emailIsValid (email) {
+            return /\S+@\S+\.\S+/.test(email)
+          }
+
+        fetch('http://localhost:8080/user/register', {
             method: 'POST',
             body: JSON.stringify({email: email, password: password, userName: username}),
             headers: new Headers({
@@ -18,7 +27,9 @@ const Register = (props) => {
             (response) => response.json()
         ).then((data) => {
             props.updateToken(data.token)
+            history.push("/profile");
         }).catch(err => console.log(err))
+        
     }
 
 
