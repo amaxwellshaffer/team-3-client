@@ -10,7 +10,8 @@ const Home = () => {
                 <p>
                     remember, reminisce, and review your favorite 90's movies in classic blockbuster fashion!
                 </p>
-                <p><Link to="/register">Become a member</Link> to get started!</p>
+                <p><Link to="/register">Become a member</Link> to get started! <br />
+                Already a member?<Link to="/login">Login</Link> </p>
 
 
             </div>

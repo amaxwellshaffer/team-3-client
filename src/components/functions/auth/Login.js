@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Label, Input, Button, Row, Col } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button, Row, Col, InputGroup, InputGroupAddon, InputGroupText } from "reactstrap";
 import { useHistory } from "react-router-dom";
 
 const Login = (props) => {
@@ -22,7 +22,10 @@ const Login = (props) => {
         ).then((data) => {
             props.updateToken(data.token);
             history.push("/profile");
-        }).catch(err => console.log(err))
+        }).catch((err) => {
+            console.log(err);
+            alert("Valid Email and Password must be provided")
+        })
     }
 
 
@@ -37,22 +40,26 @@ const Login = (props) => {
                         <h1>Login</h1>
                         <Form onSubmit={handleSubmit}>
                             <FormGroup>
-                                <Label htmlFor="email">Email</Label>
-                                <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
+                                <InputGroup>
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText>Email</InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
+                                    </InputGroup>
                             </FormGroup>
-                            <FormGroup>
-                                <Label htmlFor="password">Password</Label>
-                                <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
-                            </FormGroup>
-                            <p />
-                            <Button type="submit">Login</Button>
+                                <FormGroup>
+                                    <Label htmlFor="password">Password</Label>
+                                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
+                                </FormGroup>
+                                <br />
+                                <Button type="submit" color="primary" >Login</Button>
                         </Form>
 
                     </Col>
                 </Row>
 
             </div>
-        </div>
+            </div>
     )
 };
 
