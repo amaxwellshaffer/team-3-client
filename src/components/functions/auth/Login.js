@@ -42,25 +42,32 @@ const Login = (props) => {
                             <FormGroup>
                                 <InputGroup>
                                     <InputGroupAddon addonType="prepend">
-                                        <InputGroupText>Email</InputGroupText>
+                                        <InputGroupText >Email:</InputGroupText>
                                     </InputGroupAddon>
                                     <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
-                                    </InputGroup>
+                                </InputGroup>
                             </FormGroup>
-                                <FormGroup>
-                                    <Label htmlFor="password">Password</Label>
+                            <br />
+                            <FormGroup>
+                                <InputGroup>
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText>Password:</InputGroupText>
+                                    </InputGroupAddon>
                                     <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
-                                </FormGroup>
-                                <br />
-                                <Button type="submit" color="primary" >Login</Button>
+                                </InputGroup>
+                            </FormGroup>
+                            <br />
+                            <Button type="submit" color="primary" >Login</Button>
                         </Form>
 
                     </Col>
                 </Row>
 
             </div>
-            </div>
+        </div>
     )
 };
 
 export default Login;
+
+// onChange={(e) => setPassword(e.target.value)} name="password" value={password}
