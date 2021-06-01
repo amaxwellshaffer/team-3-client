@@ -1,6 +1,37 @@
 .App {
   text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+.card {
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(238, 237, 237, 0.22);
+  border-color: rgba(238, 237, 237, 0.22);
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+  text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .card {
+    margin: 1.5rem;
+  }
+}
+
+/* .title {
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+} */
+/* 
+.title p {
+  margin-bottom: 0.2rem;
+  font-size: 1.2rem;
+} */
 
 
 
