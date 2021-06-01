@@ -3,6 +3,10 @@
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.main{
+  min-height: 85vh;
+}
+
 .card {
   padding: 1rem;
   margin: 1rem;
@@ -32,6 +36,8 @@
   margin-bottom: 0.2rem;
   font-size: 1.2rem;
 } */
+
+
 
 
 

@@ -1,14 +1,20 @@
 import React from "react";
-import {Row} from "reactstrap";
+import {Button, Row} from "reactstrap";
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
-const Footer = () => {
+
+
+const Footer = (props) => {
+
     return(
         <footer>
             <Row>
-                <p>&copy; Throwback Theater 2021 </p>
+                <p>&copy; Throwback Theater 2021    <a href="/" onClick={props.clickLogout}>Logout</a> </p>
             </Row>
-        </footer>
+            </footer>
     )
-};
+}
+
+{/* <Button color="light" size="sm" block onClick={props.clickLogout}>Logout</Button> */}
 
 export default Footer;
