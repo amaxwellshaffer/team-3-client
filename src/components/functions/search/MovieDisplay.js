@@ -16,7 +16,7 @@ const MovieDisplay = ({movie}) => {
                     <CardBody>
                         <CardTitle tag="h5">{movie.title}</CardTitle>
                         {/* <CardText>{movie.overview}</CardText> */}
-                        <AddReview className="btn btn-primary">Add Movie Review</AddReview>
+                        <AddReview className="btn btn-primary" movie={movie} >Add Movie Review</AddReview>
                         {/* <Button>Add Movie Review</Button> */}
                     </CardBody>
                 </Card>
