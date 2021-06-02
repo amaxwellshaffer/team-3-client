@@ -57,7 +57,7 @@ const Navigation = (props) => {
             <div className="content-area">
                 <Switch>
                     <Route exact path="/"><Home /></Route>
-                    <Route exact path="/profile"><Profile /></Route>
+                    <Route exact path="/profile"><Profile token={props.token} /></Route>
                     <Route exact path="/search"><Search /></Route>
                     <Route exact path="/login"><Login updateToken={props.updateToken} /></Route>
                     <Route exact path="/register"><Register updateToken={props.updateToken} /></Route>

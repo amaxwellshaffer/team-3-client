@@ -23,7 +23,6 @@ const Profile = (props) => {
   const [reviewList, setReviewList] = useState([]);
   let APIURL = "http://localhost:8080";
 
-  let token = "";
 
   const fetchReviews = (e) => {
     // e.preventDefault();
@@ -32,8 +31,8 @@ const Profile = (props) => {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        // Authorization: props.token,
-        Authorization: token,
+        Authorization: localStorage.getItem('token'),
+        // Authorization: token,
       }),
     })
       .then((res) => res.json())
@@ -43,39 +42,39 @@ const Profile = (props) => {
       });
   };
 
-  const reviewMapper = (props) => {
-      return reviewList.map((review, index) => {
-          console.log(review.id)
+  // const reviewMapper = (props) => {
+  //     return reviewList.map((review, index) => {
+  //         console.log(review.id)
 
-          return (
-              <div>
-                  <Card>
-                      <CardHeader className="cardHeader">{review.title}</CardHeader>
-                      <CardImg src={review.posterPath} alt="Movie Poster"/>
-                      <CardBody>
-                          <CardTitle tag="h4">
-                              Released: {review.year}
-                          </CardTitle>
-                          <CardText>
-                              <p className="userReviews">
-                                  {review.comment}
-                              </p>
-                          </CardText>
-                      </CardBody>
-                  </Card>
-              </div>
-          )
-      })
-  }
+  //         return (
+  //             <div>
+  //                 <Card>
+  //                     <CardHeader className="cardHeader">{review.title}</CardHeader>
+  //                     <CardImg src={review.posterPath} alt="Movie Poster"/>
+  //                     <CardBody>
+  //                         <CardTitle tag="h4">
+  //                             Released: {review.year}
+  //                         </CardTitle>
+  //                         <CardText>
+  //                             <p className="userReview">
+  //                                 {review.comment}
+  //                             </p>
+  //                         </CardText>
+  //                     </CardBody>
+  //                 </Card>
+  //             </div>
+  //         )
+  //     })
+  // }
 
   return (
     <div className="main">
       <div className="profile-container">
         <h1>My Profile</h1>
 
-        <Button className="listButton" onClick={fetchReviews} style={{color: "black", backgroundColor: "#BB86FC"}}>View my reviews</Button>
+        <Button className="listButton" onClick={fetchReviews} style={{color: "black", backgroundColor: "orange"}}>View my reviews</Button>
 
-        <Row className="divCont">{reviewMapper()}</Row>
+        {/* <Row className="divCont">{reviewMapper()}</Row> */}
       </div>
     </div>
   );
