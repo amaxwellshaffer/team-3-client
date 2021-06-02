@@ -46,8 +46,8 @@ const Navigation = (props) => {
     return (
         <div className="site-container">
 
-            <Navbar color="primary" dark expand="sm" navbar>
-                <NavbarBrand href="/"><i>Throwback Theater</i></NavbarBrand>
+            <Navbar  color="primary" dark expand="sm" navbar className="barOfNaigation">
+                <NavbarBrand className="logotype" href="/">Throwback Theater</NavbarBrand>
                 <div >
                 {protectedNav()}
 

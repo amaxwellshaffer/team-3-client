@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+
 .App {
   text-align: center;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -5,6 +7,13 @@
 
 .main{
   min-height: 85vh;
+}
+
+
+.logotype {
+  font-family: 'Rock Salt', cursive;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .card {
@@ -36,6 +45,7 @@
   margin-bottom: 0.2rem;
   font-size: 1.2rem;
 } */
+
 
 
 
