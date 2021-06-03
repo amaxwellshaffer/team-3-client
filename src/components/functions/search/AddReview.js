@@ -25,10 +25,15 @@ const AddReview = (props) => {
 
         fetch('http://localhost:8080/movies/review', {
             method: 'POST', 
-            body: JSON.stringify({review: review}),
+            body: JSON.stringify({
+                title:props.movie.title,
+                year: props.movie.release_date,
+                comment: review,
+                posterPath: props.movie.poster_path
+            }),
             headers: new Headers({ 
                 'Content-Type': 'application/json', 
-                // 'Authorization': props.token
+                'Authorization': localStorage.getItem('token')
             }),
         })
         .then((res) => res.json())
@@ -44,7 +49,7 @@ const AddReview = (props) => {
             <Modal isOpen={modal} toggle={toggle} className={modal}>
                 <ModalHeader toggle={toggle} close={closeBtn}>Movie Review</ModalHeader>
                 <ModalBody>
-                Add a rad review for this movie!  
+                Add a rad review for {props.movie.title}: 
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <FormGroup>
                             <Input type="textarea" name="review" id="reviewText"

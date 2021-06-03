@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button, Row, Col } from "reactstrap";
+import { Form, FormGroup, Label, Input, Button, Row, Col, InputGroup, InputGroupAddon, InputGroupText } from "reactstrap";
 import { useHistory } from "react-router-dom";
 
 const Register = (props) => {
@@ -63,18 +63,32 @@ const Register = (props) => {
                         <h1>Register</h1>
                         <Form onSubmit={handleSubmit}>
                             <FormGroup>
-                                <Label htmlFor="email">Email</Label>
-                                <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
+                            <InputGroup>
+                                    <InputGroupAddon addonType="prepend">
+                                        <InputGroupText >Email:</InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email} />
+                                </InputGroup>
                             </FormGroup>
+                            <br />
                             <FormGroup>
-                                <Label htmlFor="username">Username</Label>
-                                <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />
+                            <InputGroup>
+                                <InputGroupAddon addonType="prepend">
+                                        <InputGroupText>Username:</InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input onChange={(e) => setUsername(e.target.value)} name="username" value={username} />
+                                </InputGroup>
                             </FormGroup>
+                            <br />
                             <FormGroup>
-                                <Label htmlFor="password">Password</Label>
-                                <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
+                                <InputGroup>
+                                <InputGroupAddon addonType="prepend">
+                                        <InputGroupText>Password:</InputGroupText>
+                                    </InputGroupAddon>
+                                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
+                                </InputGroup>
                             </FormGroup>
-                            <p />
+                            <br />
                             <Button type="submit" color="primary">Register</Button>
                         </Form>
 
