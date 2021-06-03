@@ -1,19 +1,15 @@
 import React, { useState } from "react";
 import MovieDisplay from "./MovieDisplay";
-import {  Container, Row, Col } from 'reactstrap';
+import {  Container, Row, Col, CardDeck, Button } from 'reactstrap';
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
 // const API_KEY = process.env.MOVIE_DB_KEY;
 
 const Search = () => {
     const [query, setQuery] = useState(''); 
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     
-    // let url = `${baseURL}?api_key=6b58dcdfa373912ad3062ec3929db37c&year=${query}`;
-    let url = `${baseURL}?api_key=6b58dcdfa373912ad3062ec3929db37c&primary_release_year=${query}&sort_by=popularity.desc&include_adult=false`;
-    // &sort_by=vote_average.desc`;
-    
-    
+    let url = `${baseURL}?api_key=6b58dcdfa373912ad3062ec3929db37c&primary_release_year=${query}&sort_by=popularity.desc&include_adult=false&page=3`;
     
     const fetchMovies = () => {
         fetch(url)
@@ -26,7 +22,7 @@ const Search = () => {
             if (json.results.length === 0) {
                 throw new Error('No Results');
             } else { 
-                const data = json.results; 
+                const data = json.results;
                 setData(data); 
                 console.log(json.results);
             }
@@ -41,19 +37,24 @@ const Search = () => {
                 <Container fluid>
                     <Row>
                         <Col>
-                            <h1>Discover Movies</h1>
+                            <br />
+                            <h2 className='page-title'>Discover Movies from the 80's and 90's!</h2>
+                            
+                            <h6>Enter a year between 1980 and 1999 below to see what movies topped the charts in that year!</h6>
                             <input 
                             value={query} 
                             onChange={(e) => setQuery(e.target.value)}
                             />
-                            <button onClick={fetchMovies}>Enter Year to Find Movies</button>
+                            <Button color='primary' onClick={fetchMovies}>Enter Year to Find Movies</Button>
                         </Col>
                     </Row>
                     <Row>
                         {!data ? null : data.map((i) => {
                             return (
-                                <Col sm="4">
+                                <Col sm="3">
+                                    <CardDeck>
                                     <MovieDisplay movie={i}/>
+                                    </CardDeck>
                                 </Col>
                             );
                         })}
@@ -67,8 +68,4 @@ const Search = () => {
 export default Search;
 
 
- {/* {data?.results?.map((movie) => {
-    return (
-    <MovieDisplay key={movie.title}/>
-    ); 
-})} */}
+ 
