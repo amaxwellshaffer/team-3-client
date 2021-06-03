@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 const Footer = (props) => {
 
     return(
-        <footer>
+        <footer className='footer'>
             <Row>
                 <p>&copy; Throwback Theater 2021    <a href="/" onClick={props.clickLogout}>Logout</a> </p>
             </Row>
