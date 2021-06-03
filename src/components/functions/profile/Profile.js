@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 import {
   Table,
@@ -19,10 +19,8 @@ import {
 } from "reactstrap";
 
 const Profile = (props) => {
-
   const [reviewList, setReviewList] = useState([]);
   let APIURL = "http://localhost:8080";
-
 
   const fetchReviews = (e) => {
     // e.preventDefault();
@@ -31,50 +29,66 @@ const Profile = (props) => {
       method: "GET",
       headers: new Headers({
         "Content-Type": "application/json",
-        Authorization: localStorage.getItem('token'),
+        Authorization: localStorage.getItem("token"),
         // Authorization: token,
       }),
     })
       .then((res) => res.json())
       .then((json) => {
-        setReviewList(json);
+        setReviewList(json.reviews);
         console.log(json);
       });
   };
 
-  // const reviewMapper = (props) => {
-  //     return reviewList.map((review, index) => {
-  //         console.log(review.id)
+  useEffect(() => {
+    fetchReviews();
+  }, []);
 
-  //         return (
-  //             <div>
-  //                 <Card>
-  //                     <CardHeader className="cardHeader">{review.title}</CardHeader>
-  //                     <CardImg src={review.posterPath} alt="Movie Poster"/>
-  //                     <CardBody>
-  //                         <CardTitle tag="h4">
-  //                             Released: {review.year}
-  //                         </CardTitle>
-  //                         <CardText>
-  //                             <p className="userReview">
-  //                                 {review.comment}
-  //                             </p>
-  //                         </CardText>
-  //                     </CardBody>
-  //                 </Card>
-  //             </div>
-  //         )
-  //     })
-  // }
+  const deleteReview = (review) => {
+    fetch(`${APIURL}/movies/remove/${review.id}`, {
+      method: "DELETE",
+      headers: new Headers({
+        "Content-Type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      }),
+    })
+      .then(() => fetchReviews())
+      .catch((err) => console.log(err));
+  };
+
+
+  console.log(reviewList);
+
+  const reviewMapper = () => {
+    return reviewList.map((review, index) => {
+      console.log(review.id);
+
+      return (
+        <div>
+          <Card>
+            <CardHeader className="cardHeader" tag="h4">
+              {review.title}
+            </CardHeader>
+            <CardImg src={review.posterPath} alt="Movie Poster" />
+            <CardBody>
+              <CardTitle tag="h6">Released: {review.year}</CardTitle>
+              <CardText>
+                <p className="userReview">{review.comment}</p>
+              </CardText>
+              <Button color="danger" size="sm" onClick={() => deleteReview(review)}>Delete Review</Button>
+            </CardBody>
+          </Card>
+        </div>
+      );
+    });
+  };
 
   return (
     <div className="main">
+      <h1>My Profile</h1>
       <div className="profile-container">
-        <h1>My Profile</h1>
 
-        <Button className="listButton" onClick={fetchReviews} style={{color: "black", backgroundColor: "orange"}}>View my reviews</Button>
-
-        {/* <Row className="divCont">{reviewMapper()}</Row> */}
+        <Row className="divCont">{reviewMapper()}</Row>
       </div>
     </div>
   );
