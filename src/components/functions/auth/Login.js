@@ -37,7 +37,7 @@ const Login = (props) => {
                 <Row>
                     <Col>
 
-                        <h1>Login</h1>
+                        <h1 className='page-title'>Login</h1>
                         <Form onSubmit={handleSubmit}>
                             <FormGroup>
                                 <InputGroup>

@@ -6,8 +6,10 @@
 }
 
 .main{
+  background-image: linear-gradient(to right, #D1439E , #54276F,  #1DA5BE);
   min-height: 85vh;
-  position: relative;
+  align-items: center;
+  color: white; 
 }
 
 .logotype {
@@ -17,7 +19,6 @@
 }
 
 .card {
-  display:flex; 
   padding: 1rem; 
   margin: 1rem;
   border-radius: 1rem;
@@ -34,30 +35,31 @@
 
 .page-title {
   font-family: 'Rock Salt', cursive;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .jumbotron {
-  display: flex;
   justify-content: center;
   background-image: linear-gradient(to right, #D1439E , #54276F,  #1DA5BE);
   color: white; 
-  height: 300px; 
+  height: 250px; 
   align-items: center;
 }
 
 .middle-home-page {
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-image: linear-gradient(to right, #D1439E , #54276F,  #1DA5BE);
   align-items: center;
   padding-bottom: 30px;
   color: white; 
+  min-height: 200px;
 }
 
 .header-home {
   font-family: 'Rock Salt', cursive;
-  margin-bottom: -20px;
-  margin-top: 30px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .text-home {
@@ -68,11 +70,17 @@
   align-items:flex-start; 
   text-align: justify;
   text-justify: inter-word;
-  padding: 0px 10px 10px 20px; 
+  padding: 20px 10px 10px 20px; 
+  max-width: 100%;
+}
+
+.featured-films-section { 
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .search-container {
-  background-image: linear-gradient(to right, #D1439E , #54276F, #78b1bb);
   align-items: center;
   padding-bottom: 30px;
   color: white; 
@@ -91,13 +99,23 @@ a:hover {
 }
 
 .profile-container {
-  background-image: linear-gradient(to right, #D1439E , #54276F, #78b1bb);
-  align-items: center;
-  color: white; 
+  font-family: 'Rock Salt', cursive;
+  padding-top: 20px;
 }
 
 .footer {
-  background-image: linear-gradient(to right, #D1439E , #54276F, #78b1bb);
-  align-items: center;
+  font-family: 'Rock Salt', cursive;
+  background-color:  #54276F;
   color: white; 
+  font-size: 14px;
+  padding: 20px 0px 5px 0px; 
 }
+
+.logout {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  float: right; 
+  padding-right: 30px;
+}
+
+p { margin:0 }
