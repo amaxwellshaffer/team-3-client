@@ -60,7 +60,7 @@ const Register = (props) => {
                 <Row>
                     <Col>
 
-                        <h1>Register</h1>
+                        <h1 className='page-title'>Register</h1>
                         <Form onSubmit={handleSubmit}>
                             <FormGroup>
                             <InputGroup>
