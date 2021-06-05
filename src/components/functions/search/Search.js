@@ -4,7 +4,7 @@ import { Container, Row, Col, CardGroup, Button, Input, PaginationItem } from 'r
 
 
 const baseURL = 'https://api.themoviedb.org/3/discover/movie';
-const API_KEY = `${process.env.REACT_APP_API_KEY}`;
+// const API_KEY = `${process.env.REACT_APP_API_KEY}`;
 
 
 const Search = () => {
@@ -25,7 +25,7 @@ const Search = () => {
     
     const fetchMovies = () => {
 
-        let url = `${baseURL}?api_key=${API_KEY}&primary_release_year=${query}&page=${pageNumber}&sort_by=revenue.desc&include_adult=false`;
+        let url = `${baseURL}?api_key=6b58dcdfa373912ad3062ec3929db37c&primary_release_year=${query}&page=${pageNumber}&sort_by=revenue.desc&include_adult=false`;
 
         fetch(url)
             .then(res => {
