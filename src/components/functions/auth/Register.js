@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, FormGroup, Input, Button, Row, Col, InputGroup, InputGroupAddon, InputGroupText } from "reactstrap";
 import { useHistory } from "react-router-dom";
+import APIURL from '../../../helpers/environment';
 
 const Register = (props) => {
     const [email, setEmail] = useState('');
@@ -33,7 +34,7 @@ const Register = (props) => {
 
         if (emailIsValid() && usernameIsValid() && passwordIsValid()) {
 
-            fetch('http://localhost:8080/user/register', {
+            fetch(`${APIURL}/user/register`, {
                 method: 'POST',
                 body: JSON.stringify({ email: email, password: password, userName: username }),
                 headers: new Headers({

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import EditComment from './EditComment';
+import APIURL from '../../../helpers/environment';
 
 import {
   Button,
@@ -15,7 +16,7 @@ import {
 
 const Profile = (props) => {
   const [reviewList, setReviewList] = useState([]);
-  const APIURL = "http://localhost:8080";
+  
 
   const fetchReviews = (e) => {
     // e.preventDefault();
