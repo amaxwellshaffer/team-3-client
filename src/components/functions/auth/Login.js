@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, FormGroup, Label, Input, Button, Row, Col, InputGroup, InputGroupAddon, InputGroupText } from "reactstrap";
+import { Form, FormGroup, Input, Button, Row, Col, InputGroup, InputGroupAddon, InputGroupText } from "reactstrap";
 import { useHistory } from "react-router-dom";
 
 const Login = (props) => {

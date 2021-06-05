@@ -1,6 +1,6 @@
 import React from "react";
-import {Button, Row} from "reactstrap";
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
+import { Row } from "reactstrap";
+// import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 
 const Footer = (props) => {
@@ -14,7 +14,5 @@ const Footer = (props) => {
             </footer>
     )
 }
-
-{/* <Button color="light" size="sm" block onClick={props.clickLogout}>Logout</Button> */}
 
 export default Footer;

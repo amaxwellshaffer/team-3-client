@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Col, Row, Jumbotron } from 'reactstrap';
-import logo from './TT.png'; 
 
 const Home = () => {
     return (
@@ -38,7 +37,7 @@ const Home = () => {
                             </Row>
                         </Col>
                         <Col xs="6">
-                            <img id='home-picture' src='https://370g431nca8u23kfvb3cilkf-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/IMG_3663-480x480.jpg' className='card' height='400px'></img>
+                            <img id='home-picture' src='https://370g431nca8u23kfvb3cilkf-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/IMG_3663-480x480.jpg' className='card' height='400px' alt='90s Movies'></img>
                         </Col>
                     </Row>
                 </Container>
@@ -52,7 +51,7 @@ const Home = () => {
                     </Row>
                     <Row className='developer-picks'>
                         <Col>
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/81E911hVDAL._AC_SL1500_.jpg' className='card' height='300px' id='poster-image'/>
+                            <img src='https://images-na.ssl-images-amazon.com/images/I/81E911hVDAL._AC_SL1500_.jpg' className='card' height='300px' id='poster-image' alt='Return of the Jedi'/>
                             <h5 className='page-title'>Max's Pick</h5>
                             <p>Title: Return of the Jedi</p>
                             <p>Release Year: 1983</p>
@@ -62,7 +61,7 @@ const Home = () => {
                             <p>a fourth one?”</p>
                         </Col>
                         <Col>
-                            <img src='https://i.ebayimg.com/images/g/X94AAOSwcLxYCp6e/s-l500.jpg' className='card' height='300px' id='poster-image'/>
+                            <img src='https://i.ebayimg.com/images/g/X94AAOSwcLxYCp6e/s-l500.jpg' className='card' height='300px' id='poster-image' alt='Set It Off'/>
                             <h5 className='page-title'>Ashleigh's Pick</h5>
                             <p>Title: Set It Off</p>
                             <p>Release Year: 1996</p>
@@ -71,7 +70,7 @@ const Home = () => {
                             <p>"An undeniable classic that will make you feel all the feels."</p>
                         </Col>
                         <Col>
-                            <img src='https://i.pinimg.com/originals/bf/93/bd/bf93bd7b361b9a43b54c59161966cb18.png' className='card' height='300px' id='poster-image'/>
+                            <img src='https://i.pinimg.com/originals/bf/93/bd/bf93bd7b361b9a43b54c59161966cb18.png' className='card' height='300px' id='poster-image' alt='Pulp Fiction'/>
                             <h5 className='page-title'>Turner's Pick</h5>
                             <p>Title: Pulp Fiction</p>
                             <p>Release Year: 1994</p>
@@ -88,39 +87,3 @@ const Home = () => {
 
 export default Home;
 
-
-{/* <CardDeck xs='3' className='card'>
-      <Card>
-        <CardImg top width="100%" src="https://images-na.ssl-images-amazon.com/images/I/81E911hVDAL._AC_SL1500_.jpg" alt="Return of the Jedi" />
-        <CardBody>
-          <CardTitle tag="h5">Max's Pick</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Title: Return of the Jedi</CardSubtitle>
-          <CardText>
-              Release Year: 1983
-              Max's Review: “Do you think they’ll make a fourth one?”
-            </CardText>
-          <Button Link=''>Movie Info</Button>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardImg top width="100%" src="https://i.ebayimg.com/images/g/X94AAOSwcLxYCp6e/s-l500.jpg" alt="Set It Off" />
-        <CardBody>
-          <CardTitle tag="h5">Ashleigh's Pick</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Title: Set It Off</CardSubtitle>
-          <CardText>
-              Release Year: 1996
-              Ashleigh's Review:  
-            </CardText>
-          <Button Link>Movie Info</Button>
-        </CardBody>
-      </Card>
-      <Card>
-        <CardImg top width="100%" src="/assets/256x186.svg" alt="Card image cap" />
-        <CardBody>
-          <CardTitle tag="h5">Card title</CardTitle>
-          <CardSubtitle tag="h6" className="mb-2 text-muted">Card subtitle</CardSubtitle>
-          <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</CardText>
-          <Button>Button</Button>
-        </CardBody>
-      </Card>
-    </CardDeck> */}
