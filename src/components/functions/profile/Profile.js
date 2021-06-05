@@ -18,6 +18,7 @@ import {
   CardText,
   CardImg,
   CardHeader,
+  CardFooter,
   CardDeck,
   Container,
   Row,
@@ -57,58 +58,6 @@ const Profile = (props) => {
     setEditComment(true);
   }
 
-  // const handleShow = () => {
-  //   setIsOpen(false);
-  //   editOff();
-  // };
-
-  // const editOff = () => {
-  //     setEditComment(false);
-  // }
-
-  // const updateComment = (review) => {
-  //   // event.preventDefault();
-
-  //   fetch(`${APIURL}/movies/edit/${review.id}`, {
-  //     method: "PUT",
-  //     body: JSON.stringify({ comment: commentEdit }),
-  //     headers: new Headers({
-  //       "Content-Type": "application/json",
-  //       Authorization: localStorage.getItem("token"),
-  //     }),
-  //   })
-  //     .then(() => {
-  //       fetchReviews();
-  //       commentModal();
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
-  // const commentModal = () => {
-  //   return (
-  //     <Modal isOpen={isOpen} onKeyDown={onkeydown}>
-  //     <ModalHeader>Edit Comment</ModalHeader>
-  //     <ModalBody>
-  //       <Form onSubmit={updateComment}>
-  //         <FormGroup>
-  //           <Label>New Comment:</Label>
-  //           <Input
-  //             value={commentEdit}
-  //             onChange={(e) => setCommentEdit(e.target.value)}
-  //           />
-  //           <Button color="warning" size="sm">
-  //             Submit
-  //           </Button>
-  //           <Button color="secondary" size="sm" onClick={handleShow}>Close</Button>
-  //         </FormGroup>
-  //       </Form>
-  //     </ModalBody>
-  //   </Modal>
-  //   )
-  // }
-
   const deleteReview = (review) => {
     fetch(`${APIURL}/movies/remove/${review.id}`, {
       method: "DELETE",
@@ -132,30 +81,31 @@ const Profile = (props) => {
 
       return (
         <div>
-          <Container className="profileCards">
-            <CardDeck>
-          <Card>
-            <CardHeader className="cardHeader" tag="h4">
-              {review.title}
-            </CardHeader>
-            <CardImg className="profilePosters" src={`https://image.tmdb.org/t/p/w500/${review.posterPath}`} alt="Movie Poster" />
+          <CardDeck style={{display: "flex", flexDirection: "row"}}>
+            <Card className='card' body inverse color="primary" >
+            <CardImg className="justify-content-md-center" /*id="reviewImg"*/ src={`https://image.tmdb.org/t/p/w500/${review.posterPath}`} alt="Movie Poster" />
             <CardBody>
+            <CardTitle className="cardTitle" tag="h5">
+              Title: {review.title}
+            </CardTitle>
               <CardTitle tag="h6">Released: {review.year}</CardTitle>
               <CardText>
+                <div>
+                  <h5>My Review:</h5>
                 <p className="userReview">{review.comment}</p>
+                </div>
               </CardText>
               {/* <EditComment APIURL={APIURL} reviewId={review.id} fetchReviews={fetchReviews}></EditComment> */}
               {/* <Button color="warning" size="sm" <EditComment APIURL={APIURL} reviewId={review.id} fetchReviews={fetchReviews}></EditComment> >Edit Comment</Button> */}
-
-
+              
+              <div className="reviewButtons">
               <Button color="warning" size="sm" onClick={() => {editOn()}}> {(editComment) ? <EditingComment APIURL={APIURL} reviewList={reviewList} fetchReviews={fetchReviews} review={review} reviewId={review.id} setEditComment={setEditComment}/> : null}Edit Comment</Button>
 
-              {/* <Button color="warning" size="sm" onClick={() => updateComment(review)}>Edit Review</Button> */}
               <Button color="danger" size="sm" onClick={() => deleteReview(review)}>Delete Review</Button>
+              </div>
             </CardBody>
           </Card>
-          </CardDeck>
-          </Container>
+          </CardDeck>  
         </div>
       );
     });
@@ -163,10 +113,16 @@ const Profile = (props) => {
 
   return (
     <div className="main">
-      <h1>My Profile</h1>
       <div className="profile-container">
+      <h1>My Profile</h1>
 
-        <Row className="divCont">{reviewMapper()}</Row>
+      <Container className="profileCards">
+      <Col xs="6" sm="3">
+        <Row className="divCont">
+          {reviewMapper()}
+          </Row>
+          </Col>
+          </Container>
       </div>
     </div>
   );

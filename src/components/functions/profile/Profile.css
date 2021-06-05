@@ -1,7 +1,4 @@
-.profilePosters{
+#reviewImg{
     max-width: 20em;
-}
-
-.profileCards{
-    text-align: center;
+    align-items: center;
 }
