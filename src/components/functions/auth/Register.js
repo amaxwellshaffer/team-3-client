@@ -85,7 +85,7 @@ const Register = (props) => {
                                 <InputGroupAddon addonType="prepend">
                                         <InputGroupText>Password:</InputGroupText>
                                     </InputGroupAddon>
-                                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} />
+                                    <Input onChange={(e) => setPassword(e.target.value)} name="password" value={password} type="password"/>
                                 </InputGroup>
                             </FormGroup>
                             <br />
