@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Col, Row, Jumbotron } from 'reactstrap';
+import logo from './TT.png'; 
 
 const Home = () => {
     return (
@@ -11,7 +12,7 @@ const Home = () => {
                         <br />
                         <h1 className='page-title'>Welcome to Throwback Theater</h1>
                     <   p className='lead'>
-                        remember, reminisce, and review your favorite 80's and 90's movies in classic blockbuster fashion!
+                        Remember, reminisce, and review your favorite 80's and 90's movies in classic blockbuster fashion!
                         </p>
                         <hr className="my-2" />
                         <h6><Link to="/register">Become a member</Link> to get started! <br />
@@ -20,7 +21,7 @@ const Home = () => {
                     </Container>
                 </Jumbotron>
                 <Container fluid className='middle-home-page'>
-                    <Row xs='2'>
+                    <Row xs='1'>
                         <Col xs="6">
                             <Row>
                             <h5 className='header-home'>Discover. Search. Watch. Review. Repeat.</h5>
@@ -37,39 +38,46 @@ const Home = () => {
                             </Row>
                         </Col>
                         <Col xs="6">
-                            <img className='home-picture' src='https://370g431nca8u23kfvb3cilkf-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/IMG_3663-480x480.jpg' className='card' height='400px'></img>
+                            <img id='home-picture' src='https://370g431nca8u23kfvb3cilkf-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/IMG_3663-480x480.jpg' className='card' height='400px'></img>
                         </Col>
                     </Row>
                 </Container>
                 <Container fluid className='featured-films-section'>
                     <Row>
                         <Col>
-                        <h3 className='header-home'>Featured Films</h3> 
+                        <h3 className='header-home'>Featured Throwback Films</h3> 
                         <hr className="my-2" />
-                        <p>We asked the app developers' for their favorite movie from the 80's or 90's. The "Delevopers' Picks" are in!</p>
+                        <p>Booyah! Check out these top movie picks from our app developers from the 80's and 90's.</p>
                         </Col>
                     </Row>
                     <Row className='developer-picks'>
                         <Col>
-                            <img src='https://images-na.ssl-images-amazon.com/images/I/81E911hVDAL._AC_SL1500_.jpg' className='card' height='300px'/>
+                            <img src='https://images-na.ssl-images-amazon.com/images/I/81E911hVDAL._AC_SL1500_.jpg' className='card' height='300px' id='poster-image'/>
                             <h5 className='page-title'>Max's Pick</h5>
                             <p>Title: Return of the Jedi</p>
                             <p>Release Year: 1983</p>
-                            <p>Max's Review: “Do you think they’ll make a fourth one?”</p>
+                            <hr className="my-2" />
+                            <p>Max's Review:</p> 
+                            <p>“Do you think they’ll make</p>
+                            <p>a fourth one?”</p>
                         </Col>
                         <Col>
-                            <img src='https://i.ebayimg.com/images/g/X94AAOSwcLxYCp6e/s-l500.jpg' className='card' height='300px'/>
+                            <img src='https://i.ebayimg.com/images/g/X94AAOSwcLxYCp6e/s-l500.jpg' className='card' height='300px' id='poster-image'/>
                             <h5 className='page-title'>Ashleigh's Pick</h5>
                             <p>Title: Set It Off</p>
-                            <p>Release Year: 1996</p> 
-                            <p>Ashleigh's Review:</p>
+                            <p>Release Year: 1996</p>
+                            <hr className="my-2" /> 
+                            <p>Ashleigh's Review:</p> 
+                            <p>"An undeniable classic that will make you feel all the feels."</p>
                         </Col>
                         <Col>
-                            <img src='https://i.pinimg.com/originals/bf/93/bd/bf93bd7b361b9a43b54c59161966cb18.png' className='card' height='300px'/>
+                            <img src='https://i.pinimg.com/originals/bf/93/bd/bf93bd7b361b9a43b54c59161966cb18.png' className='card' height='300px' id='poster-image'/>
                             <h5 className='page-title'>Turner's Pick</h5>
                             <p>Title: Pulp Fiction</p>
                             <p>Release Year: 1994</p>
+                            <hr className="my-2" />
                             <p>Turner's Review:</p>
+                            <p>"This is hands down one of the strangest yet most amazing movies.</p>
                         </Col>
                     </Row>
                 </Container>
