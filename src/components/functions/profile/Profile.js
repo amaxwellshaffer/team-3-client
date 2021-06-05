@@ -8,27 +8,13 @@ import {
   CardTitle,
   CardText,
   CardImg,
-  CardHeader,
-  CardFooter,
-  CardDeck,
   Container,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Label,
-  Input,
-  Form,
-  FormGroup,
   Row,
   Col,
 } from "reactstrap";
 
 const Profile = (props) => {
   const [reviewList, setReviewList] = useState([]);
-  const [editComment, setEditComment] = useState(false);
-  const [commentEdit, setCommentEdit] = useState("");
-  const [isOpen, setIsOpen] = useState(true);
   const APIURL = "http://localhost:8080";
 
   const fetchReviews = (e) => {
@@ -65,7 +51,6 @@ const Profile = (props) => {
     .catch((err) => console.log(err));
   };
   
-
   const reviewMapper = () => {
 
     return reviewList.map((review) => {
