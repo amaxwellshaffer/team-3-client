@@ -1,4 +1,5 @@
 let APIURL = ''
+console.log(window.location.hostname);
 
 switch (window.location.hostname) {
     case 'localhost' :
