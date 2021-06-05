@@ -93,9 +93,11 @@ const Search = () => {
                     <Row>
                         <Col>
                             <br />
-                            <h2 className='page-title'>Discover Movies from the 80's and 90's!</h2>
+                            <h2 className='page-title'>Discover Movies from the 80's and 90's</h2>
+
 
                             <h6>Enter a year between 1980 and 1999 below to see what movies topped the charts in that year!</h6>
+
 
                             <select class="form-select" value={query} onChange={(e) => setQuery(e.target.value)}>
                             <option selected value="">Select A Year</option>
@@ -103,6 +105,8 @@ const Search = () => {
                             </select>
                            
                             <Button color='primary' onClick={ query ? fetchMovies : null}>Enter Year to Find Movies</Button>
+
+
 
                         </Col>
                     </Row>

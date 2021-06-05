@@ -85,8 +85,8 @@ const Profile = (props) => {
 
   return (
     <div className="main">
-      <h1>My Profile</h1>
       <div className="profile-container">
+        <h1>My Profile</h1>
 
         <Row className="divCont">{reviewMapper()}</Row>
       </div>
