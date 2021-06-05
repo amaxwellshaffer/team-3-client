@@ -1,10 +1,10 @@
 import React from 'react';
-import { Route, Link, Switch, Redirect } from 'react-router-dom';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Button, } from "reactstrap";
+import { Route, Link, Switch } from 'react-router-dom';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from "reactstrap";
 import Home from './Home';
 import Search from '../functions/search/Search';
 import Profile from '../functions/profile/Profile';
-import Login from '../functions/auth/Login';
+import Login from '../functions/auth/Login'; 
 import Register from '../functions/auth/Register';
 import logo from './TT.png'; 
 
