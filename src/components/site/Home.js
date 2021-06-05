@@ -49,7 +49,7 @@ const Home = () => {
                         <p>We asked the app developers' for their favorite movie from the 80's or 90's. The "Delevopers' Picks" are in!</p>
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className='developer-picks'>
                         <Col>
                             <img src='https://images-na.ssl-images-amazon.com/images/I/81E911hVDAL._AC_SL1500_.jpg' className='card' height='300px'/>
                             <h5 className='page-title'>Max's Pick</h5>
@@ -65,10 +65,10 @@ const Home = () => {
                             <p>Ashleigh's Review:</p>
                         </Col>
                         <Col>
-                            <img src='' classname='card' height='300px'/>
+                            <img src='https://i.pinimg.com/originals/bf/93/bd/bf93bd7b361b9a43b54c59161966cb18.png' className='card' height='300px'/>
                             <h5 className='page-title'>Turner's Pick</h5>
-                            <p>Title:</p>
-                            <p>Release Year: </p>
+                            <p>Title: Pulp Fiction</p>
+                            <p>Release Year: 1994</p>
                             <p>Turner's Review:</p>
                         </Col>
                     </Row>
