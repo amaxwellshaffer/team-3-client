@@ -4,6 +4,7 @@ import { useHistory } from "react-router-dom";
 import APIURL from '../../../helpers/environment';
 
 const Register = (props) => {
+    console.log(window.location.hostname);
     const [email, setEmail] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
