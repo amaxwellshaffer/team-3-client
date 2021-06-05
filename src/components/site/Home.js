@@ -76,7 +76,7 @@ const Home = () => {
                             <p>Release Year: 1994</p>
                             <hr className="my-2" />
                             <p>Turner's Review:</p>
-                            <p>"This is hands down one of the strangest yet most amazing movies.</p>
+                            <p>"This is hands down one of the strangest yet most amazing movies ever made."</p>
                         </Col>
                     </Row>
                 </Container>

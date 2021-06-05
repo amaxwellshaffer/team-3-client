@@ -153,3 +153,11 @@ a:hover {
 }
 
 p { margin:0 }
+
+.userReview {
+  font-size: 18px;
+}
+
+.reviewButtons {
+  padding: 10px;
+}
