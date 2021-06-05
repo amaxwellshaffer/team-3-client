@@ -4,7 +4,9 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, In
 const AddReview = (props) => {
     const [review, setReview] = useState(''); 
     const [modal, setModal] = useState(false);
-    const toggle = () => setModal(!modal);
+    const toggle = () => {
+        !localStorage.getItem('token') ? alert('You mussed be logged in to leave a comment') 
+        : setModal(!modal);}
     const closeBtn = <button className="close" onClick={toggle}>&times;</button>;
 
     const handleSubmit = (e) => {
@@ -41,13 +43,13 @@ const AddReview = (props) => {
                 Add a rad review for {props.movie.title}: 
                     <Form onSubmit={(e) => handleSubmit(e)}>
                         <FormGroup>
-                            <Input type="textarea" name="review" id="reviewText"
+                            <Input type="textarea" name="review" id="reviewText" maxlength="140"
                             value={review}
                             onChange={(e) =>setReview(e.target.value)}/>
                         </FormGroup>
                         <ModalFooter>
                         
-                        <Button color="primary" type='submit' onClick={toggle}>Add Movie Review</Button>{' '}
+                        <Button color="primary" type='submit' onClick={toggle}>Add Comment</Button>{' '}
 
                         <Button color="primary" onClick={toggle}>Cancel</Button>
                         </ModalFooter>
