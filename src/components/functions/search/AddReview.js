@@ -3,22 +3,9 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, In
 
 const AddReview = (props) => {
     const [review, setReview] = useState(''); 
-    const {
-     buttonLabel,
-     className
-    } = props;
-
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
     const closeBtn = <button className="close" onClick={toggle}>&times;</button>;
-
-    // const review = {
-    //     title: 
-    //     year:
-    //     comment:
-    //     owner:
-    //     posterPath: 
-    // }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -40,13 +27,15 @@ const AddReview = (props) => {
         .then((logReview) => {
             console.log(logReview);
         })
+        .catch((err) => err);
     }
-
 
     return (
         <div>
-            <Button color="secondary" onClick={toggle}>Add Movie Review</Button>
-            <Modal isOpen={modal} toggle={toggle} className={modal}>
+            <Button outline color="info" onClick={toggle} >Add Review</Button>
+            
+            <Modal returnFocusAfterClose isOpen={modal} toggle={toggle} unmountOnClose={true} className={modal}>
+                
                 <ModalHeader toggle={toggle} close={closeBtn}>Movie Review</ModalHeader>
                 <ModalBody>
                 Add a rad review for {props.movie.title}: 
@@ -57,8 +46,10 @@ const AddReview = (props) => {
                             onChange={(e) =>setReview(e.target.value)}/>
                         </FormGroup>
                         <ModalFooter>
-                        <Button color="success" type='submit'>Add Movie Review</Button>{' '}
-                        <Button color="secondary" onClick={toggle}>Cancel</Button>
+                        
+                        <Button color="primary" type='submit' onClick={toggle}>Add Movie Review</Button>{' '}
+
+                        <Button color="primary" onClick={toggle}>Cancel</Button>
                         </ModalFooter>
                     </Form>
                 </ModalBody> 
@@ -70,30 +61,3 @@ const AddReview = (props) => {
 export default AddReview;
 
 
-
-//Code we may not need but might have tried along the way 
-   // function addReview() {
-    //     console.log('Add Movie Review');
-        // let title = document.getElementById('title').value
-        // let year = document.getElementById('date').value
-        // let comment = document.getElementById('entry').value
-        // let owner = document.getElementById
-        // let posterPath = document.getElementById
-        // const accessToken = localStorage.getItem('SessionToken')
-        // let newReview = { review: { title: title, year: year, comment: comment, owner: owner, posterPath: posterPath } }
-    
-        // fetch('http://localhost:8080/movies/review', {
-        //     method: 'POST', 
-        //     headers: new Headers({ 
-        //         'Content-Type': 'application/json', 
-                // 'Authorization': accessToken
-            // }),
-            // body: JSON.stringify(review)
-    //     })
-    //     .then(response => {
-    //         console.log(response.json())
-    //     })
-    //     .catch((err) => {
-    //         console.log(err)
-    //     })
-    // };
