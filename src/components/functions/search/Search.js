@@ -97,17 +97,11 @@ const Search = () => {
 
                             <h6>Enter a year between 1980 and 1999 below to see what movies topped the charts in that year!</h6>
 
-                        <Row className="justify-content-center">
-                          
-                            <Col md="2">
                             <select class="form-select" value={query} onChange={(e) => setQuery(e.target.value)}>
                             <option selected value="">Select A Year</option>
                                 {dropDown()}
                             </select>
-                            </Col>
-                        </Row>
-
-                            <br />
+                           
                             <Button color='primary' onClick={ query ? fetchMovies : null}>Enter Year to Find Movies</Button>
 
                         </Col>
