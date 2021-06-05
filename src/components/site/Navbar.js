@@ -1,11 +1,12 @@
 import React from 'react';
 import { Route, Link, Switch, Redirect } from 'react-router-dom';
-import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Button } from "reactstrap";
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink, Button, } from "reactstrap";
 import Home from './Home';
 import Search from '../functions/search/Search';
 import Profile from '../functions/profile/Profile';
 import Login from '../functions/auth/Login';
 import Register from '../functions/auth/Register';
+import logo from './TT.png'; 
 
 const Navigation = (props) => {
 
@@ -46,13 +47,15 @@ const Navigation = (props) => {
     return (
         <div className="site-container">
 
-            <Navbar  color="primary" dark expand="sm" navbar className="barOfNaigation">
+            <Navbar  color="primary" dark expand="sm" navbar className="barOfNavigation">
+                <img src={logo} alt='logo' style={{ width: 85, height: 65 }} id='nav-logo'/>
                 <NavbarBrand className="logotype" href="/">Throwback Theater</NavbarBrand>
                 <div >
                 {protectedNav()}
 
                 </div>
             </Navbar>
+           
 
             <div className="content-area">
                 <Switch>

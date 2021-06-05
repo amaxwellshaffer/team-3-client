@@ -12,6 +12,17 @@
   color: white; 
 }
 
+.barOfNavigation {
+  position: sticky;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+}
+
+#nav-logo {
+  padding-left: 10px;
+}
+
 .logotype {
   font-family: 'Rock Salt', cursive;
   margin-left: 20px;
@@ -41,19 +52,24 @@
 
 .jumbotron {
   justify-content: center;
-  background-image: linear-gradient(to right, #D1439E , #54276F,  #1DA5BE);
   color: white; 
   height: 250px; 
   align-items: center;
+  display: inline-block;
 }
 
 .middle-home-page {
-  justify-content: space-between;
-  background-image: linear-gradient(to right, #D1439E , #54276F,  #1DA5BE);
+  text-align: center;
+  justify-content: center;
   align-items: center;
   padding-bottom: 30px;
   color: white; 
   min-height: 200px;
+  display: inline-block;
+}
+
+#home-picture {
+  display: inline-block;
 }
 
 .header-home {
@@ -80,18 +96,29 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding-bottom: 30px;
 }
 
 .developer-picks {
-  display: flex;
+  display: flex; 
   align-items: center;
   justify-content: center;
+}
+
+#poster-image {
+  display: inline-block;
 }
 
 .search-container {
   align-items: center;
   padding-bottom: 30px;
   color: white; 
+}
+
+.form-select{
+  width:200px; 
+  display:inline;
+  text-align: center;
 }
 
 a:link {
