@@ -22,6 +22,8 @@ const EditComment = (props) => {
   const [commentEdit, setCommentEdit] = useState("");
   const [isOpen, setIsOpen] = useState(true);
 
+  console.log(props.review);
+
   const handleShow = () => {
     setIsOpen(false);
     editOff();
@@ -40,7 +42,7 @@ const EditComment = (props) => {
   const updateComment = (event) => {
     event.preventDefault();
 
-    fetch(`${props.APIURL}/movies/edit/${props.reviewId}`, {
+    fetch(`${props.APIURL}/movies/edit/${props.review.id}`, {
       method: "PUT",
       body: JSON.stringify({ comment: commentEdit }),
       headers: new Headers({
@@ -48,7 +50,7 @@ const EditComment = (props) => {
         Authorization: localStorage.getItem("token"),
       }),
     })
-      .then((res) => {
+      .then(() => {
         props.fetchReviews();
       })
       .catch((err) => {
@@ -58,7 +60,7 @@ const EditComment = (props) => {
 
   return (
     <Modal isOpen={isOpen} onKeyDown={onKeyDown}>
-      <ModalHeader>`{props.review.title}`</ModalHeader>
+      <ModalHeader>{props.review.title}</ModalHeader>
       <ModalBody>
         <Form onSubmit={updateComment}>
           <FormGroup>
