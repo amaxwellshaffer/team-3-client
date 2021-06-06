@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, FormGroup, Input, Button, Row, Col, InputGroup, InputGroupAddon, InputGroupText } from "reactstrap";
 import { useHistory } from "react-router-dom";
+import APIURL from '../../../helpers/environment';
 
 const Login = (props) => {
 
@@ -11,7 +12,7 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault(event);
-        fetch('http://localhost:8080/user/login', {
+        fetch(`${APIURL}/user/login`, {
             method: 'POST',
             body: JSON.stringify({ email: email, password: password }),
             headers: new Headers({

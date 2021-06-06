@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Input } from 'reactstrap';
+import APIURL from '../../../helpers/environment';
 
 const AddReview = (props) => {
     const [review, setReview] = useState(''); 
@@ -12,7 +13,7 @@ const AddReview = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch('http://localhost:8080/movies/review', {
+        fetch(`${APIURL}/movies/review`, {
             method: 'POST', 
             body: JSON.stringify({
                 title:props.movie.title,
