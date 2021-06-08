@@ -25,7 +25,7 @@ const Search = () => {
     
     const fetchMovies = () => {
 
-        let url = `${baseURL}?api_key=6b58dcdfa373912ad3062ec3929db37c&primary_release_year=${query}&page=${pageNumber}&sort_by=revenue.desc&include_adult=false`;
+        let url = `${baseURL}?api_key=${process.env.REACT_APP_API_KEY}&primary_release_year=${query}&page=${pageNumber}&sort_by=revenue.desc&include_adult=false`;
 
         fetch(url)
             .then(res => {
@@ -83,10 +83,8 @@ const Search = () => {
 
    
 
-
     const paginate = () => {
 
-    
 
         return(
             <Row class="row justify-content-between">
@@ -105,7 +103,6 @@ const Search = () => {
     }
 
    
-
     return (
         <div className="main">
             <div className="search-container">

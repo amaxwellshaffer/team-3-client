@@ -5,6 +5,7 @@ import Footer from './components/site/Footer';
 import Navigation from './components/site/Navbar';
 import { BrowserRouter as Router} from 'react-router-dom';
 
+// console.log(process.env.REACT_APP_API_KEY);
 
 function App() {
   
