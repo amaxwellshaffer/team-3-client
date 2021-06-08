@@ -59,7 +59,7 @@ const Profile = (props) => {
       console.log(review.id);
 
       return (
-        <Col xs="6" sm="3">
+        <Col sm="6" md="4" lg="3">
             <Card className='card' body inverse color="primary" >
             <CardImg className="justify-content-md-center" src={`https://image.tmdb.org/t/p/w500/${review.posterPath}`} alt="Movie Poster" />
             <CardBody>
